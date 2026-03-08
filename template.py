@@ -13,11 +13,11 @@ list_of_files = [
     f"src/{project_name}/component/model_trainer.py",
     f"src/{project_name}/component/model_monitering.py",
     f"src/{project_name}/pipelines/__init__.py",
-    f"src/{project_name}/pipelines/training_pipelines.py"
-    f"src/{project_name}/pipelines/prediction_pipelines.py"
+    f"src/{project_name}/pipelines/training_pipelines.py",
+    f"src/{project_name}/pipelines/prediction_pipelines.py",
     f"src/{project_name}/exception.py",
-    f"src/{project_name}/logger.py"
-    f"src/{project_name}/utiles.py"
+    f"src/{project_name}/logger.py",
+    f"src/{project_name}/utiles.py",
     "main.py",
     "app.py",
     "Dockerfile",
