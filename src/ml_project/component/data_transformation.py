@@ -18,7 +18,7 @@ class DataTransformationConfig:
 
 class DataTrasformation:
     def __init__(self):
-        self.process_file_path = DataTransformationConfig() 
+        self.data_process_file_path = DataTransformationConfig() 
     
     def get_data_transformer(self): 
         """
@@ -85,7 +85,7 @@ class DataTrasformation:
             ] 
 
             save_object(
-                file_path=self.process_file_path,
+                file_path=self.data_process_file_path.process_file_path,
                 object = preprocesser_obj
 
             )
@@ -93,7 +93,7 @@ class DataTrasformation:
             return (
                 train_arr,
                 test_arr,
-                self.process_file_path
+                self.data_process_file_path.process_file_path
             )
 
         except Exception as e:
