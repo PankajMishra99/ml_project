@@ -46,7 +46,7 @@ def evaluate_model(x_train,x_test,y_train,y_test,models,param):
 
             train_model_score = r2_score(y_train,y_train_pred) # train model score
 
-            test_model_score = r2_score(y_train,y_test_pred) # test model score 
+            test_model_score = r2_score(y_test,y_test_pred) # test model score 
 
             report[list(models.values())[i]]=test_model_score
     
