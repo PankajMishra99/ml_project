@@ -88,7 +88,7 @@ class ModelTrainer:
             logging.info(f" Best param for {actual_model} are {best_param}") 
 
             #  mlflow
-            mlflow.set_registry_uri('')
+            mlflow.set_registry_uri('https://dagshub.com/PankajMishra99/ml_project.mlflow')
 
             with mlflow.start_run():
                 predicted_values = best_model.predict(x_test)
@@ -112,7 +112,8 @@ class ModelTrainer:
             r2_sc = r2_score(y_test,y_pred)
             return r2_sc 
         except Exception as e: 
-            raise CustomException(e,sys)
+            raise CustomException(e,sys)  
+        
 
 
 
