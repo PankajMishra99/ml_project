@@ -21,7 +21,7 @@ if __name__=='__main__':
         #  model trainer 
         model_trainer = ModelTrainer()
         r2_sc = model_trainer.initiate_model_trainer(train_arr, test_arr)
-        logging.info(f"R2 score", r2_sc)
+        logging.info("R2 score", r2_sc)
 
     
     except Exception as e:
