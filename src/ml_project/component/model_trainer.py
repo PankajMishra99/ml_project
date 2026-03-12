@@ -32,18 +32,18 @@ class ModelTrainer:
         try:
             logging.info('split the training and testing data..') 
             x_train = train_arr[:,:-1]
-            y_train= train_arr[:-1]
+            y_train= train_arr[:,-1]
             x_test = test_arr[:,:-1]
             y_test = test_arr[:,-1]
 
             # Regresser Model 
             models={
-        'linear model':LinearRegression(),
-        'Ridge':Ridge(),
-        'Lasso':Lasso(),
-        'k-nearest Regresser': KNeighborsRegressor(),
-        'Decsion tree' : DecisionTreeRegressor(),
-        'Random forest regresser': RandomForestRegressor()
+                    'linear model':LinearRegression(),
+                    'Ridge':Ridge(),
+                    'Lasso':Lasso(),
+                    'k-nearest Regresser': KNeighborsRegressor(),
+                    'Decsion tree' : DecisionTreeRegressor(),
+                    'Random forest regresser': RandomForestRegressor()
                 }
             
             # Parameter 
@@ -75,7 +75,7 @@ class ModelTrainer:
                 list(model_report.values()).index(best_model_score)
             ]
             best_model = models[best_model_name]
-            logging.info(f'Best model name :,{best_model_name}') 
+            logging.info(f'Best model name : {best_model_name}') 
 
             model_names = list(param.keys())
             actual_model = ''
@@ -115,5 +115,5 @@ class ModelTrainer:
             raise CustomException(e,sys)  
         
 
-
+ 
 

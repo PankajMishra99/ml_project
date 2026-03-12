@@ -39,7 +39,7 @@ class DataTrasformation:
 
             cat_pipeline = Pipeline(
                 steps=[
-                    'imputer',SimpleImputer(strategy='mode'),
+                    ('imputer',SimpleImputer(strategy='most_frequent')),
                     ('one_hot_encoder',OneHotEncoder())
                 ]
             )
@@ -50,9 +50,11 @@ class DataTrasformation:
                     ('cat_pipeline',cat_pipeline,cat_col)
                 ]
             )
+            if preprocesser is None:
+                 logging.error('Preprocesser is None..')
             return preprocesser 
         except Exception as e:
-            CustomException(e,sys)
+           raise  CustomException(e,sys)
 
 
     def initiate_data_transformer(self,train_path,test_path):
@@ -90,11 +92,8 @@ class DataTrasformation:
 
             )
 
-            return (
-                train_arr,
-                test_arr,
-                self.data_process_file_path.process_file_path
-            )
+            return train_arr,test_arr,self.data_process_file_path.process_file_path
+            
 
         except Exception as e:
             CustomException(e,sys) 
